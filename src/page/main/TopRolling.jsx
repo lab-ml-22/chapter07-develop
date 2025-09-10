@@ -1,8 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
+import 'swiper/swiper-bundle.css';
 import swiper1Img from '../../img/imgTopRolling_1.png'
 import swiper2Img from '../../img/imgTopRolling_2.png'
 import swiper3Img from '../../img/imgTopRolling_3.png'

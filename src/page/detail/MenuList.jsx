@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {Swiper, SwiperSlide} from 'swiper/react'
-import 'swiper/css'
+import 'swiper/swiper-bundle.css'
 import icon1 from '../../img/dv_mn_new.png'
 import icon2 from '../../img/dv_mn_set_chicken.png'
 import icon3 from '../../img/dv_mn_set_burger.png'
