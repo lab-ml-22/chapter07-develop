@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.270c7909.css",
+    "main.js": "/static/js/main.1cbae4e9.js",
+    "static/js/667.69612198.chunk.js": "/static/js/667.69612198.chunk.js",
+    "static/media/imgTopRolling_2.png": "/static/media/imgTopRolling_2.8c1ee3ea9bdf527a62c7.png",
+    "static/media/bg_fandom.jpg": "/static/media/bg_fandom.5e52267dfbb7c36b17e1.jpg",
+    "static/media/banner_storesearch.png": "/static/media/banner_storesearch.60ba32291ff36118ff96.png",
+    "static/media/info_allergy.jpg": "/static/media/info_allergy.09294611aae5705f01ae.jpg",
+    "static/media/imgTopRolling_1.png": "/static/media/imgTopRolling_1.2f7622f40ddf6a4ba366.png",
+    "static/media/banner_delivery_pattern.png": "/static/media/banner_delivery_pattern.9bbe58c60a941b1de044.png",
+    "static/media/logo.jpg": "/static/media/logo.540d90c0e1827c5c5d50.jpg",
+    "static/media/banner_delivery.png": "/static/media/banner_delivery.970964180c886fddeebc.png",
+    "static/media/banner_sub_bg.jpg": "/static/media/banner_sub_bg.64b18e46901b5f88cdf2.jpg",
+    "static/media/imgTopRolling_3.png": "/static/media/imgTopRolling_3.3b30d709ad79bf356359.png",
+    "static/media/title_bg.jpg": "/static/media/title_bg.6fb96e98cc7669873dd7.jpg",
+    "static/media/text_bg.jpg": "/static/media/text_bg.d38b795f19fc39f75f41.jpg",
+    "static/media/info_nutrition.jpg": "/static/media/info_nutrition.a130b3572d51382d5593.jpg",
+    "index.html": "/index.html",
+    "main.270c7909.css.map": "/static/css/main.270c7909.css.map",
+    "main.1cbae4e9.js.map": "/static/js/main.1cbae4e9.js.map",
+    "667.69612198.chunk.js.map": "/static/js/667.69612198.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.270c7909.css",
+    "static/js/main.1cbae4e9.js"
+  ]
+}
