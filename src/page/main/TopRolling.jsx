@@ -1,6 +1,5 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import swiper1Img from '../../img/imgTopRolling_1.png'
 import swiper2Img from '../../img/imgTopRolling_2.png'
@@ -13,7 +12,6 @@ const TopRolling = () => {
                 spaceBetween={50}
                 slidesPerView={1}
                 autoplay={{delay: 3000, disableOnInteraction: false}}
-                modules={[Autoplay]}
                 style={{width: '100%', height: '100%'}}
             >
                 <SwiperSlide><img src={swiper1Img} alt=""/></SwiperSlide>
