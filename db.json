@@ -1,0 +1,897 @@
+{
+  "reviews": [
+    {
+      "id": "review-1",
+      "productId": "2342896",
+      "author": "김치킨",
+      "rating": 5,
+      "content": "정말 맛있어요! 양념이 잘 배어있고 바삭해서 좋았습니다.",
+      "createdAt": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": "review-2",
+      "productId": "2342896",
+      "author": "치킨러버",
+      "rating": 4,
+      "content": "가격 대비 만족스러운 맛이었어요. 다음에도 주문할 예정입니다.",
+      "createdAt": "2024-01-14T15:20:00.000Z"
+    },
+    {
+      "id": "review-3",
+      "productId": "2278113",
+      "author": "맛집탐방",
+      "rating": 5,
+      "content": "징거팩이 정말 맛있네요! 양도 많고 양념도 완벽해요.",
+      "createdAt": "2024-01-13T09:15:00.000Z"
+    },
+    {
+      "id": "21f7",
+      "rating": 3,
+      "content": "야식으로 먹으면 맛있어요",
+      "author": "치킨왕",
+      "productId": "2176926",
+      "createdAt": "2025-09-10T09:36:28.254Z"
+    },
+    {
+      "id": "review-2176730",
+      "rating": 5,
+      "content": "갓양념치킨8조각 정말 맛있어요! 양념이 잘 배어있고 바삭합니다.",
+      "author": "치킨러버",
+      "productId": "2176730",
+      "createdAt": "2024-01-16T14:30:00.000Z"
+    },
+    {
+      "id": "7071",
+      "rating": 5,
+      "content": "아침마다 커피수혈이 필요한데, 고소하고 맛있어요",
+      "author": "커피수혈자",
+      "productId": "1471781",
+      "createdAt": "2025-09-10T10:07:41.278Z"
+    },
+    {
+      "id": "a709",
+      "rating": 3,
+      "content": "이건 꼭 텐더 추가해야함",
+      "author": "toss",
+      "productId": "2278227",
+      "createdAt": "2025-09-10T10:16:18.042Z"
+    }
+  ],
+  "basket": [
+    {
+      "id": "b0aadeab-9c3d-4ebd-bd76-c42d6cae72e6",
+      "productID": "1545438",
+      "count": 2,
+      "originPrice": 700,
+      "price": 1400,
+      "option": "",
+      "title": "스모키머스타드소스",
+      "optionName": ""
+    },
+    {
+      "id": "530516c2-a6b3-4389-a616-e4b35b1c5c1b",
+      "productID": "2176681",
+      "count": 1,
+      "originPrice": 5000,
+      "price": 5000,
+      "option": "",
+      "title": "너겟8조각",
+      "optionName": ""
+    },
+    {
+      "id": "b118b6ea-468d-4d65-92bf-6b7dbb7b35bc",
+      "productID": "2342897",
+      "count": 1,
+      "originPrice": 9200,
+      "price": 9200,
+      "option": "",
+      "title": "에그타르트박스",
+      "optionName": ""
+    },
+    {
+      "id": "bad847aa-2c59-4746-908e-29247b5da2b9",
+      "productID": "2278173",
+      "count": 2,
+      "originPrice": 19900,
+      "price": 39800,
+      "option": "",
+      "title": "커넬 오리지널타워팩",
+      "optionName": ""
+    }
+  ],
+  "bestMenu": [
+    {
+      "id": "2176926",
+      "title": "닭껍질튀김1900원",
+      "subText": "",
+      "price": 1900,
+      "image": "/images/2176926.png",
+      "option": [
+        {
+          "name": "콜라추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "콜라 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "콜라 M추가",
+              "price": 500
+            }
+          ]
+        },
+        {
+          "name": "소스변경",
+          "values": [
+            {
+              "value": 0,
+              "label": "소스 3번 변경없음",
+              "price": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2278228",
+      "title": "갓양념켄치밥세트",
+      "subText": "갓양념켄치밥+콜라M+코울슬로",
+      "price": 7400,
+      "image": "/images/2278228.png",
+      "option": [
+        {
+          "name": "텐터추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "텐더 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "텐더 2조각 추가",
+              "price": 1000
+            },
+            {
+              "value": 2,
+              "label": "텐더 1조각 추가",
+              "price": 500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2278227",
+      "title": "데리야끼켄치밥세트",
+      "subText": "데리야끼켄치밥+콜라M+코울슬로",
+      "price": 7400,
+      "option": [
+        {
+          "name": "텐터추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "텐더 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "텐더 2조각 추가",
+              "price": 1000
+            },
+            {
+              "value": 2,
+              "label": "텐더 1조각 추가",
+              "price": 500
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278227.png"
+    },
+    {
+      "id": "2278226",
+      "title": "갓양념켄치밥콤보",
+      "subText": "갓양념켄치밥+콜라M",
+      "price": 6400,
+      "option": [
+        {
+          "name": "텐터추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "텐더 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "텐더 2조각 추가",
+              "price": 1000
+            },
+            {
+              "value": 2,
+              "label": "텐더 1조각 추가",
+              "price": 500
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278226.png"
+    },
+    {
+      "id": "2278225",
+      "title": "데리야끼켄치밥콤보",
+      "subText": "데리야끼켄치밥+콜라M",
+      "price": 6400,
+      "option": [
+        {
+          "name": "텐터추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "텐더 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "텐더 2조각 추가",
+              "price": 1000
+            },
+            {
+              "value": 2,
+              "label": "텐더 1조각 추가",
+              "price": 500
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278225.png"
+    },
+    {
+      "id": "2342921",
+      "title": "메쉬포테이토치킨콤보",
+      "subText": "메쉬포테이토&그레이비+핫크리스피통다리1조각",
+      "price": 4000,
+      "image": "/images/2342921.png"
+    },
+    {
+      "id": "2278113",
+      "title": "커넬데리야끼징거팩",
+      "subText": "커넬데리야끼+징거+트위스터+핫크리스피통다리2+텐...",
+      "price": 24900,
+      "image": "/images/2278113.png"
+    },
+    {
+      "id": "2278112",
+      "title": "커넬오리지널타워팩",
+      "subText": "커넬오리지널+징거타워+핫크리스피통다리2+텐더4+...",
+      "price": 19900,
+      "image": "/images/2278112.png"
+    },
+    {
+      "id": "2278174",
+      "title": "커넬 데리야끼징거팩",
+      "subText": "커넬데리야끼+징거+트위스터+핫크리스피통다리2+프...",
+      "price": 24900,
+      "image": "/images/2278174.png"
+    },
+    {
+      "id": "2278173",
+      "title": "커넬 오리지널타워팩",
+      "subText": "커넬오리지널+징거타워+핫크리스피통다리2+텐더4+...",
+      "price": 19900,
+      "image": "/images/2278173.png"
+    },
+    {
+      "id": "2278058",
+      "title": "꿀조합파티팩",
+      "subText": "치즈징거통다리+징거2+트위스터+핫크리스피통다리3...",
+      "price": 36500,
+      "image": "/images/2278058.png"
+    },
+    {
+      "id": "2278055",
+      "title": "신메뉴꿀조합1인세트",
+      "subText": "징거더블다운통다리+트위스터+핫크리스피통다리+텐더...",
+      "price": 18900,
+      "image": "/images/2278055.png"
+    },
+    {
+      "id": "2342857",
+      "title": "버터 비스켓",
+      "subText": "버터비스켓+딸기잼",
+      "price": 2600,
+      "image": "/images/2342857.png"
+    },
+    {
+      "id": "1345860",
+      "title": "코울슬로",
+      "subText": "",
+      "price": 2100,
+      "image": "/images/1345860.png"
+    }
+  ],
+  "sns": [
+    {
+      "id": "e7BXYjyeSg14"
+    },
+    {
+      "id": "IKk0DxZvUEaz"
+    },
+    {
+      "id": "LAKUgK53IMM1"
+    },
+    {
+      "id": "ERNbxr3eVLzQ"
+    }
+  ],
+  "chickenSet": [
+    {
+      "id": "2176733",
+      "title": "갓양념통다리8조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 27000,
+      "image": "/images/2176733.png"
+    },
+    {
+      "id": "2176730",
+      "title": "갓양념치킨8조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 26200,
+      "image": "/images/2176730.png"
+    },
+    {
+      "id": "2176727",
+      "title": "핫크리스피통다리8조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 24800,
+      "image": "/images/2176727.png"
+    },
+    {
+      "id": "2176691",
+      "title": "오리지널치킨 8조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 24000,
+      "image": "/images/2176691.png"
+    },
+    {
+      "id": "2176721",
+      "title": "핫크리스피치킨8조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 24000,
+      "image": "/images/2176721.png"
+    },
+    {
+      "id": "2176700",
+      "title": "갓양념통다리 8조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 27000,
+      "image": "/images/2176700.png"
+    },
+    {
+      "id": "2176697",
+      "title": "갓양념치킨 8조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 26200,
+      "image": "/images/2176697.png"
+    },
+    {
+      "id": "2176694",
+      "title": "핫크리스피통다리 8조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 24800,
+      "image": "/images/2176694.png"
+    },
+    {
+      "id": "2176724",
+      "title": "오리지널치킨8조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 24000,
+      "image": "/images/2176724.png"
+    },
+    {
+      "id": "2176688",
+      "title": "핫크리스피치킨 8조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 24000,
+      "image": "/images/2176688.png"
+    },
+    {
+      "id": "2176979",
+      "title": "갓양념통다리 8 조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 27000,
+      "image": "/images/2176979.png"
+    },
+    {
+      "id": "2176976",
+      "title": "갓양념치킨 8 조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 26200,
+      "image": "/images/2176976.png"
+    },
+    {
+      "id": "2176973",
+      "title": "핫크리스피통다리 8 조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 24800,
+      "image": "/images/2176973.png"
+    },
+    {
+      "id": "2176970",
+      "title": "오리지널치킨 8 조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 24000,
+      "image": "/images/2176970.png"
+    },
+    {
+      "id": "2176967",
+      "title": "핫크리스피치킨 8 조각",
+      "subText": "치킨나이트 1+1 제외",
+      "price": 24000,
+      "image": "/images/2176967.png"
+    },
+    {
+      "id": "2176699",
+      "title": "갓양념통다리 5조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 17700,
+      "image": "/images/2176699.png"
+    },
+    {
+      "id": "2176696",
+      "title": "갓양념치킨 5조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 17200,
+      "image": "/images/2176696.png"
+    },
+    {
+      "id": "2176693",
+      "title": "핫크리스피통다리 5조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 16200,
+      "image": "/images/2176693.png"
+    },
+    {
+      "id": "2176723",
+      "title": "오리지널치킨5조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 15700,
+      "image": "/images/2176723.png"
+    },
+    {
+      "id": "2176687",
+      "title": "핫크리스피치킨 5조각",
+      "subText": "치킨나이트 1+1 제외 ",
+      "price": 15700,
+      "image": "/images/2176687.png"
+    }
+  ],
+  "burgerSet": [
+    {
+      "id": "2278113",
+      "title": "커넬데리야끼징거팩",
+      "subText": "커넬데리야끼+징거+트위스터+핫크리스피통다리2+텐더4+프렌치프라이(M)+버터비스켓+딸기잼+콜라m2 *치킨나이트/치킨올데이 미판매",
+      "price": 24900,
+      "option": [
+        {
+          "name": "콜라추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "콜라 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "콜라 M추가",
+              "price": 500
+            }
+          ]
+        },
+        {
+          "name": "소스변경",
+          "values": [
+            {
+              "value": 0,
+              "label": "소스 3번 변경없음",
+              "price": 0
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278113.png"
+    },
+    {
+      "id": "2278112",
+      "title": "커넬오리지널타워팩",
+      "subText": "커넬오리지널+징거타워+핫크리스피통다리2+텐더4+버터비스켓+딸기잼+콜라m2 *치킨나이트/치킨올데이 미판매",
+      "price": 19900,
+      "option": [
+        {
+          "name": "콜라추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "콜라 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "콜라 M추가",
+              "price": 500
+            }
+          ]
+        },
+        {
+          "name": "소스변경",
+          "values": [
+            {
+              "value": 0,
+              "label": "소스 3번 변경없음",
+              "price": 0
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278112.png"
+    },
+    {
+      "id": "2278058",
+      "title": "꿀조합파티팩",
+      "subText": "치즈징거통다리+징거2+트위스터+핫크리스피통다리3+텐더4+닭껍질튀김+버터비스켓+콜라M3 ",
+      "price": 36500,
+      "option": [
+        {
+          "name": "콜라추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "콜라 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "콜라 M추가",
+              "price": 500
+            }
+          ]
+        },
+        {
+          "name": "소스변경",
+          "values": [
+            {
+              "value": 0,
+              "label": "소스 3번 변경없음",
+              "price": 0
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278058.png"
+    },
+    {
+      "id": "2278055",
+      "title": "신메뉴꿀조합1인세트",
+      "subText": "징거더블다운통다리+트위스터+핫크리스피통다리+텐더2+버터비스켓+콜라M ",
+      "price": 18900,
+      "option": [
+        {
+          "name": "환타추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "환타 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "환타 M추가",
+              "price": 500
+            }
+          ]
+        },
+        {
+          "name": "소스변경",
+          "values": [
+            {
+              "value": 0,
+              "label": "소스 1번 변경없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "소스 2번 추가",
+              "price": 500
+            },
+            {
+              "value": 2,
+              "label": "소스 뺌",
+              "price": 500
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278055.png"
+    },
+    {
+      "id": "2278123",
+      "title": "징거더블다운통다리박스",
+      "subText": "징거더블다운통다리+프렌치프라이M+콜라M+핫크리스피통다리 ",
+      "price": 13500,
+      "option": [
+        {
+          "name": "환타추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "환타 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "환타 M추가",
+              "price": 500
+            }
+          ]
+        },
+        {
+          "name": "소스변경",
+          "values": [
+            {
+              "value": 0,
+              "label": "소스 1번 변경없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "소스 2번 추가",
+              "price": 500
+            },
+            {
+              "value": 2,
+              "label": "소스 뺌",
+              "price": 500
+            }
+          ]
+        }
+      ],
+      "image": "/images/2278123.png"
+    },
+    {
+      "id": "2277937",
+      "title": "칠리모짜징거통다리박스",
+      "subText": "칠리모짜징거통다리+프렌치프라이M+콜라M+핫크리스피통다리 ",
+      "price": 13200,
+      "option": [
+        {
+          "name": "환타추가",
+          "values": [
+            {
+              "value": 0,
+              "label": "환타 추가 없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "환타 M추가",
+              "price": 500
+            }
+          ]
+        },
+        {
+          "name": "소스변경",
+          "values": [
+            {
+              "value": 0,
+              "label": "소스 1번 변경없음",
+              "price": 0
+            },
+            {
+              "value": 1,
+              "label": "소스 2번 추가",
+              "price": 500
+            },
+            {
+              "value": 2,
+              "label": "소스 뺌",
+              "price": 500
+            }
+          ]
+        }
+      ],
+      "image": "/images/2277937.png"
+    },
+    {
+      "id": "2278049",
+      "title": "징거더블다운통다리세트",
+      "subText": "징거더블다운통다리+프렌치프라이M+콜라M",
+      "price": 11400,
+      "image": "/images/2278049.png"
+    },
+    {
+      "id": "2277773",
+      "title": "켄터키통다리스파이시세트",
+      "subText": "켄터키통다리스파이시+프렌치프라이M+콜라M ",
+      "price": 10000,
+      "image": "/images/2277773.png"
+    },
+    {
+      "id": "2277810",
+      "title": "트위스터세트",
+      "subText": "트위스터+프렌치프라이M+콜라M",
+      "price": 6800,
+      "image": "/images/2277810.png"
+    },
+    {
+      "id": "2278172",
+      "title": "커넬 데리야끼세트",
+      "subText": "커넬데리야끼+프렌치프라이M+콜라M *치킨올데이 미판매",
+      "price": 6700,
+      "image": "/images/2278172.png"
+    },
+    {
+      "id": "1249331",
+      "title": "징거더블다운통다리",
+      "subText": "",
+      "price": 9200,
+      "image": "/images/1249331.png"
+    },
+    {
+      "id": "1249315",
+      "title": "클래식징거통다리",
+      "subText": "",
+      "price": 6600,
+      "category": "버거&세트",
+      "image": "/images/1249315.png"
+    },
+    {
+      "id": "2278228",
+      "title": "갓양념켄치밥세트",
+      "subText": "갓양념켄치밥+콜라M+코울슬로",
+      "price": 7400,
+      "category": "버거&세트",
+      "image": "/images/2278228.png"
+    },
+    {
+      "id": "2278226",
+      "title": "갓양념켄치밥콤보",
+      "subText": "갓양념켄치밥+콜라M",
+      "price": 6400,
+      "image": "/images/2278226.png"
+    }
+  ],
+  "snackSideSet": [
+    {
+      "id": "2342896",
+      "title": "비스켓박스",
+      "subText": "버터비스켓 4개+딸기잼 4개 *압구정로데오점 한정 판매",
+      "price": 10400,
+      "image": "/images/2342896.png"
+    },
+    {
+      "id": "2342897",
+      "title": "에그타르트박스",
+      "subText": "에그타르트 4개 *압구정로데오점 한정 판매",
+      "price": 9200,
+      "image": "/images/2342897.png"
+    },
+    {
+      "id": "2176739",
+      "title": "텐더4조각",
+      "subText": "",
+      "price": 5900,
+      "image": "/images/2176739.png"
+    },
+    {
+      "id": "2176681",
+      "title": "너겟8조각",
+      "subText": "",
+      "price": 5000,
+      "image": "/images/2176681.png"
+    },
+    {
+      "id": "1345856",
+      "title": "프렌치프라이L",
+      "subText": "",
+      "price": 3000,
+      "image": "/images/1345856.png"
+    },
+    {
+      "id": "2342857",
+      "title": "버터 비스켓",
+      "subText": "버터비스켓+딸기잼 ",
+      "price": 2600,
+      "image": "/images/2342857.png"
+    },
+    {
+      "id": "1345858",
+      "title": "에그타르트",
+      "subText": "",
+      "price": 2300,
+      "image": "/images/1345858.png"
+    },
+    {
+      "id": "1345860",
+      "title": "코울슬로",
+      "subText": "",
+      "price": 2100,
+      "image": "/images/1345860.png"
+    },
+    {
+      "id": "1545438",
+      "title": "스모키머스타드소스",
+      "subText": "",
+      "price": 700,
+      "image": "/images/1545438.png"
+    },
+    {
+      "id": "1345900",
+      "title": "매쉬포테이토 그레이비",
+      "subText": "",
+      "price": 3000,
+      "image": "/images/1345900.png"
+    }
+  ],
+  "drink": [
+    {
+      "id": "1471774",
+      "title": "코카콜라(L)",
+      "subText": "",
+      "price": 2600,
+      "image": "/images/1471774.png"
+    },
+    {
+      "id": "1471805",
+      "title": "스프라이트제로(L)",
+      "subText": "",
+      "price": 2600,
+      "image": "/images/1471805.png"
+    },
+    {
+      "id": "1471777",
+      "title": "환타오렌지(L)",
+      "subText": "",
+      "price": 2600,
+      "image": "/images/1471777.png"
+    },
+    {
+      "id": "1471806",
+      "title": "페트콜라 500mL",
+      "subText": "",
+      "price": 2700,
+      "image": "/images/1471806.png"
+    },
+    {
+      "id": "1471782",
+      "title": "아이스아메리카노(M)",
+      "subText": "",
+      "price": 1800,
+      "image": "/images/1471782.png"
+    },
+    {
+      "id": "1471781",
+      "title": "아메리카노(M)",
+      "subText": "",
+      "price": 1800,
+      "image": "/images/1471781.png"
+    },
+    {
+      "id": "1471832",
+      "title": "오렌지주스",
+      "subText": "",
+      "price": 2300,
+      "image": "/images/1471832.png"
+    },
+    {
+      "id": "1444649",
+      "title": "생수",
+      "subText": "",
+      "price": 1000,
+      "image": "/images/1444649.png"
+    }
+  ]
+}
