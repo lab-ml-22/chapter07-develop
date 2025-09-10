@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "set DISABLE_ESLINT_PLUGIN=true && react-scripts start",
-    "build": "set DISABLE_ESLINT_PLUGIN=true && react-scripts build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && set DISABLE_ESLINT_PLUGIN=true && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 3001",
@@ -60,5 +60,9 @@
   },
   "devDependencies": {
     "json-server": "^0.17.0"
+  },
+  "engines": {
+    "node": "18.20.5",
+    "npm": "9.8.1"
   }
 }
