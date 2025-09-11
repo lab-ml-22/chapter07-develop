@@ -1,9 +1,4 @@
-import axios from "axios"
-
-// API 기본 URL 설정
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '/.netlify/functions/api' 
-  : 'http://localhost:3001'
+import { fetchData } from '../data/mockData'
 
 // 액션타입 정의
 export const ADD_REVIEW = "ADD_REVIEW"
@@ -46,17 +41,16 @@ export const setReviewLoading = (loading) => ({
 
 // 비동기 액션들
 export const fetchReviewsAsync = (productId) => {
-    return dispatch => {
+    return async dispatch => {
         dispatch(setReviewLoading(true))
-        axios.get(`${API_BASE_URL}/reviews?productId=${productId}`)
-            .then(response => {
-                dispatch(fetchReviews(response.data))
-                dispatch(setReviewLoading(false))
-            })
-            .catch(error => {
-                console.error('리뷰 조회 실패:', error)
-                dispatch(setReviewLoading(false))
-            })
+        try {
+            const response = await fetchData('reviews', { productId })
+            dispatch(fetchReviews(response.data))
+            dispatch(setReviewLoading(false))
+        } catch (error) {
+            console.error('리뷰 조회 실패:', error)
+            dispatch(setReviewLoading(false))
+        }
     }
 }
 

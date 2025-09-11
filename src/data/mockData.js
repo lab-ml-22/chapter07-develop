@@ -91,6 +91,26 @@ export const mockData = {
       "content": "가격 대비 만족스러운 맛이었어요. 다음에도 주문할 예정입니다.",
       "createdAt": "2024-01-14T15:20:00.000Z"
     }
+  ],
+  "sns": [
+    {
+      "id": "sns-1",
+      "name": "Instagram",
+      "url": "https://instagram.com/kfc_korea",
+      "icon": "instagram"
+    },
+    {
+      "id": "sns-2", 
+      "name": "Facebook",
+      "url": "https://facebook.com/kfckorea",
+      "icon": "facebook"
+    },
+    {
+      "id": "sns-3",
+      "name": "YouTube",
+      "url": "https://youtube.com/kfckorea",
+      "icon": "youtube"
+    }
   ]
 };
 

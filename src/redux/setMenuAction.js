@@ -168,72 +168,69 @@ export const fetchSelectedChickenProductId = chickenSelectedId => {
 
 // 선택한 버거세트ID의 비동기액션
 export const fetchSelectedBurgerProductId = burgerSelectedId => {
-    return dispatch => {
-        axios.get(`${API_BASE_URL}/burgerSet?id=${burgerSelectedId}`)
-            .then(response => {
-                if(response.data && response.data.length > 0) {
-                    const resultData = response.data[0]
-                    const resultID = resultData.id
-                    if(resultData) {
-                        // 상태초기화
-                        resetOtherCategories(dispatch, 'burgerSet')
-                        // 상태업데이트
-                        dispatch(setSelectedBurgerProduct(resultData))
-                        dispatch(setSelectedBurgerProductId(resultID))
-                        dispatch(setBasketInProductTitle(resultData.title))
-                    }
+    return async dispatch => {
+        try {
+            const response = await fetchData('burgerSet', { id: burgerSelectedId })
+            if(response.data && response.data.length > 0) {
+                const resultData = response.data[0]
+                const resultID = resultData.id
+                if(resultData) {
+                    // 상태초기화
+                    resetOtherCategories(dispatch, 'burgerSet')
+                    // 상태업데이트
+                    dispatch(setSelectedBurgerProduct(resultData))
+                    dispatch(setSelectedBurgerProductId(resultID))
+                    dispatch(setBasketInProductTitle(resultData.title))
                 }
-            })
-            .catch(error => 
-                console.error(error)
-            )
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 }
 
 // 선택한 스낵사이드세트ID의 비동기액션
 export const fetchSelectedSnackSideProductId = snackSideSelectedId => {
-    return dispatch => {
-        axios.get(`${API_BASE_URL}/snackSideSet?id=${snackSideSelectedId}`)
-            .then(response => {
-                if(response.data && response.data.length > 0) {
-                    const resultData = response.data[0]
-                    const resultID = resultData.id
-                    if(resultData) {
-                        // 상태초기화
-                        resetOtherCategories(dispatch, 'snackSideSet')
-                        // 상태업데이트
-                        dispatch(setSelectedSnackSideProduct(resultData))
-                        dispatch(setSelectedSnackSideProductId(resultID))
-                        dispatch(setBasketInProductTitle(resultData.title))
-                    }
+    return async dispatch => {
+        try {
+            const response = await fetchData('snackSideSet', { id: snackSideSelectedId })
+            if(response.data && response.data.length > 0) {
+                const resultData = response.data[0]
+                const resultID = resultData.id
+                if(resultData) {
+                    // 상태초기화
+                    resetOtherCategories(dispatch, 'snackSideSet')
+                    // 상태업데이트
+                    dispatch(setSelectedSnackSideProduct(resultData))
+                    dispatch(setSelectedSnackSideProductId(resultID))
+                    dispatch(setBasketInProductTitle(resultData.title))
                 }
-            })
-            .catch(error => {
-                console.error(error)
-            })
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 }
 
 //  선택한 드링크ID의 비동기액션
 export const fetchSelectedDrinkProductId = drinkSelectedId => {
-    return dispatch => {
-        axios.get(`${API_BASE_URL}/drink?id=${drinkSelectedId}`)
-            .then(response => {
-                if(response.data && response.data.length > 0) {
-                    const resultData = response.data[0]
-                    const resultID = resultData.id
-                    if(resultData) {
-                        // 상태초기화
-                        resetOtherCategories(dispatch, 'drink')
-                        // 상태업데이트
-                        dispatch(setSelectedDrinkProduct(resultData))
-                        dispatch(setSelectedDrinkProductId(resultID))
-                        dispatch(setBasketInProductTitle(resultData.title))
-                    }
+    return async dispatch => {
+        try {
+            const response = await fetchData('drink', { id: drinkSelectedId })
+            if(response.data && response.data.length > 0) {
+                const resultData = response.data[0]
+                const resultID = resultData.id
+                if(resultData) {
+                    // 상태초기화
+                    resetOtherCategories(dispatch, 'drink')
+                    // 상태업데이트
+                    dispatch(setSelectedDrinkProduct(resultData))
+                    dispatch(setSelectedDrinkProductId(resultID))
+                    dispatch(setBasketInProductTitle(resultData.title))
                 }
-            })
-            .catch(error => {
-                console.error(error)
-            })
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 }

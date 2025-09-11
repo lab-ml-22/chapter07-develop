@@ -1,10 +1,5 @@
-import axios from "axios"
 import {v4 as uuid4} from 'uuid'
-
-// API 기본 URL 설정 (환경에 따라 동적 변경)
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '/.netlify/functions/api' 
-  : 'http://localhost:3001'
+import { fetchData } from '../data/mockData'
 
 // 액션타입정의
 export const IN_BASKET_PRODUCT = "IN_BASKET_PRODUCT"

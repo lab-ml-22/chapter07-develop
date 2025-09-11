@@ -126,15 +126,13 @@ export const setSNSList = (snsList) => ({
 
 // sns의 비동기액션
 export const fetchSNSList = () => {
-    return (dispatch) => {
-        axios.get(`${API_BASE_URL}/sns`)
-            .then((response) => {
-                // console.log(`response.data = ${JSON.stringify(response.data)}`);      
-                dispatch(setSNSList(response.data))
-            })
-            .catch(error => {
-                console.log(error);
-            })
+    return async (dispatch) => {
+        try {
+            const response = await fetchData('sns')
+            dispatch(setSNSList(response.data))
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
