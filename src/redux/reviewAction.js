@@ -46,14 +46,16 @@ export const fetchReviewsAsync = (productId) => {
         try {
             // 로컬 스토리지에서 리뷰 조회 (우선)
             const localReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
-            const filteredReviews = localReviews.filter(review => review.productId === productId)
+            const deletedReviewIds = JSON.parse(localStorage.getItem('deletedReviewIds') || '[]')
+            const filteredLocalReviews = localReviews.filter(review => review.productId === productId)
             
-            if (filteredReviews.length > 0) {
-                dispatch(fetchReviews(filteredReviews))
+            if (filteredLocalReviews.length > 0) {
+                dispatch(fetchReviews(filteredLocalReviews))
             } else {
-                // 로컬에 없으면 db.json에서 조회
+                // 로컬에 없으면 db.json에서 조회하되, 삭제된 리뷰는 제외
                 const response = await fetchData('reviews', { productId })
-                dispatch(fetchReviews(response.data))
+                const serverReviews = response.data.filter(review => !deletedReviewIds.includes(review.id))
+                dispatch(fetchReviews(serverReviews))
             }
             dispatch(setReviewLoading(false))
         } catch (error) {
@@ -108,6 +110,13 @@ export const deleteReviewAsync = (reviewId) => {
             const existingReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
             const updatedReviews = existingReviews.filter(review => review.id !== reviewId)
             localStorage.setItem('reviews', JSON.stringify(updatedReviews))
+            
+            // 삭제된 리뷰 ID를 별도로 추적
+            const deletedIds = JSON.parse(localStorage.getItem('deletedReviewIds') || '[]')
+            if (!deletedIds.includes(reviewId)) {
+                deletedIds.push(reviewId)
+                localStorage.setItem('deletedReviewIds', JSON.stringify(deletedIds))
+            }
             
             dispatch(deleteReview(reviewId))
         } catch (error) {
