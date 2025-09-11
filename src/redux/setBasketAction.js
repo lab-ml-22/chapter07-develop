@@ -56,94 +56,117 @@ export const setEachProductPlus = eachProductPlus => ({ // 장바구니에 있�
 // 장바구니에 상품넣는 비동기액션
 // export const fetchBasketInProduct = (inBasketProductId, productDetailCount, detailProdctTotal, optionChoice, productTitle) => {
 export const fetchBasketInProduct = (basketInProduct) => { 
-    return dispatch => {
-        const {productID, count, price, originPrice, title} = basketInProduct // export const fetchBasketInProduct구조분해
-        const optionName = basketInProduct.optionName || '';
-        const option = basketInProduct.option || '';
-        const id = uuid4()
+    return async dispatch => {
+        try {
+            const {productID, count, price, originPrice, title} = basketInProduct
+            const optionName = basketInProduct.optionName || '';
+            const option = basketInProduct.option || '';
+            const id = uuid4()
 
-        axios.post(`${API_BASE_URL}/basket`, {
-            id,
-            productID,
-            count,
-            originPrice,
-            price,
-            option,
-            title,
-            optionName
-        })
-        .then(response => {
-// console.log(`response.data = ${JSON.stringify(response.data)}`);
-            dispatch(setBasketInProduct(response.data))
+            // 로컬 스토리지에 장바구니 데이터 저장 (간단한 구현)
+            const basketItem = {
+                id,
+                productID,
+                count,
+                originPrice,
+                price,
+                option,
+                title,
+                optionName
+            }
+            
+            // 기존 장바구니 데이터 가져오기
+            const existingBasket = JSON.parse(localStorage.getItem('basket') || '[]')
+            existingBasket.push(basketItem)
+            localStorage.setItem('basket', JSON.stringify(existingBasket))
+            
+            dispatch(setBasketInProduct(basketItem))
             dispatch(setInitialProductId(null))
-        })
-        .catch(error => {
+        } catch (error) {
             console.error(error)
-        })
+        }
     }
 }
 
 // 장바구니에 상품빼는 비동기액션 -> Request Body로 id를 전달하는방식
 export const fetchBasketOutProdut = (callProductInfo) => {
-    return dispatch => {
-        axios.delete(`${API_BASE_URL}/basket/${callProductInfo}`)
-        .then(() => {
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에서 해당 상품 제거
+            const existingBasket = JSON.parse(localStorage.getItem('basket') || '[]')
+            const updatedBasket = existingBasket.filter(item => item.id !== callProductInfo)
+            localStorage.setItem('basket', JSON.stringify(updatedBasket))
+            
             dispatch(setBasketOutProduct(callProductInfo))
-        })
-        .catch(error => {
+        } catch (error) {
             console.error(error)
-        })
+        }
     }
 } 
 
 // 장바구니에 상품부르는 비동기액션
 export const fetchBasketCallProduct = () => {
-    return dispatch => {
-        axios.get(`${API_BASE_URL}/basket`)
-            .then(response => {
-                dispatch(setBasketCallProduct(response.data))
-            })
-            .catch(error => {
-                console.log(error)
-            })
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에서 장바구니 데이터 가져오기
+            const basketData = JSON.parse(localStorage.getItem('basket') || '[]')
+            dispatch(setBasketCallProduct(basketData))
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
 // 장바구니에 있는 상품의 카운트감소 비동기액션
 export const fetchEachProductMinus = (id, updateProductData) => {
-    return dispatch => {
-        axios.put(`${API_BASE_URL}/basket/${id}`, updateProductData)
-            .then(response => {
-                dispatch(setEachProductMinus(response.data))                
-            })
-            .catch(error => {
-                console.error(error)
-            })
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에서 해당 상품 수량 감소
+            const existingBasket = JSON.parse(localStorage.getItem('basket') || '[]')
+            const updatedBasket = existingBasket.map(item => 
+                item.id === id ? { ...item, ...updateProductData } : item
+            )
+            localStorage.setItem('basket', JSON.stringify(updatedBasket))
+            
+            dispatch(setEachProductMinus(updateProductData))
+        } catch (error) {
+            console.error(error)
+        }
     }
 }
 
 // 장바구니에 있는 상품의 카운트증가 비동기액션
 export const fetchEachProductPlus = (id, updateProductData) => {
-    return dispatch => {
-        axios.put(`${API_BASE_URL}/basket/${id}`, updateProductData)
-            .then(response => {
-                dispatch(setEachProductPlus(response.data))
-            })
-            .catch(error => {
-                console.error(error)
-            })
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에서 해당 상품 수량 증가
+            const existingBasket = JSON.parse(localStorage.getItem('basket') || '[]')
+            const updatedBasket = existingBasket.map(item => 
+                item.id === id ? { ...item, ...updateProductData } : item
+            )
+            localStorage.setItem('basket', JSON.stringify(updatedBasket))
+            
+            dispatch(setEachProductPlus(updateProductData))
+        } catch (error) {
+            console.error(error)
+        }
     }
 }
 
 // 장바구니에 있는 상품카운트옵션 비동기액션
 export const fetchProductCountPrice = (id, updateProductPrice) => {
-    return dispatch => {
-        axios.put(`${API_BASE_URL}/basket/${id}`, updateProductPrice)
-            .then(response => {
-                dispatch(setProductCountPrice(response.data))
-            })
-            .catch(error => {
-                console.error(error)
-            })
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에서 해당 상품 가격 업데이트
+            const existingBasket = JSON.parse(localStorage.getItem('basket') || '[]')
+            const updatedBasket = existingBasket.map(item => 
+                item.id === id ? { ...item, ...updateProductPrice } : item
+            )
+            localStorage.setItem('basket', JSON.stringify(updatedBasket))
+            
+            dispatch(setProductCountPrice(updateProductPrice))
+        } catch (error) {
+            console.error(error)
+        }
     }
 }

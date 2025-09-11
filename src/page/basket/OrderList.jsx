@@ -67,7 +67,7 @@ const OrderList = () => {
                             return  <li key={idx}>
                                         <div className="info">
                                             <div className="imgbox">
-                                                <img src={`/images/${value.productID}.png`} alt=""/>
+                                                <img src={value.image || `/images/${value.productID}.png`} alt=""/>
                                             </div>
                                             <div className="textbox">
                                                 <h3>{value.title}</h3>

@@ -139,7 +139,7 @@ const DetailCategory = ({activeIndex, onProductClick}) => {
                                 const formatPrice = (value.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')                       
                                 return  <li key={idx}>
                                             <a onClick={() => onDetailProduct(value.id)} href="javascript:void(0)">
-                                                <img src={`/images/${value.id}.png`} alt={value.title}/>
+                                                <img src={value.image || `/images/${value.id}.png`} alt={value.title}/>
                                                 <span className="title">{value.title}</span>
                                                 <span className="subtext">{value.subText}</span>
                                                 <div className="review-info">

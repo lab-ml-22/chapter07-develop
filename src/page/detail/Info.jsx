@@ -144,7 +144,7 @@ const Info = () => {
     
     const renderProductDetail = (product) => (
         <div className="infoBox">
-            <img src={`/images/${product.id}.png`} alt={product.title}/>
+            <img src={product.image || `/images/${product.id}.png`} alt={product.title}/>
             <div className="title">{product.title}</div>
             <div className="itemInner">
                 <span className="title">구성</span>
