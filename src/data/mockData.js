@@ -1,5 +1,5 @@
 // db.json의 실제 데이터를 사용
-import dbData from '../../db.json';
+import dbData from '../db.json';
 
 // API 호출을 정적 데이터로 대체하는 함수
 export const fetchData = async (endpoint, params = {}) => {

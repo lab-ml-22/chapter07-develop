@@ -23,7 +23,7 @@ exports.handler = async (event, context) => {
 
   try {
     // db.json 파일 읽기
-    const dbPath = path.join(process.cwd(), 'db.json');
+    const dbPath = path.join(process.cwd(), 'src', 'db.json');
     const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
     
     // 경로에서 리소스 추출 (예: /bestMenu, /chickenSet 등)
