@@ -63,7 +63,7 @@ const DetailCategory = ({activeIndex, onProductClick}) => {
         const counts = {}
         for (const product of products) {
             try {
-                const response = await axios.get(`http://localhost:3001/reviews?productId=${product.id}`)
+                const response = await axios.get(`${process.env.NODE_ENV === 'production' ? '/.netlify/functions/api' : 'http://localhost:3001'}/reviews?productId=${product.id}`)
                 counts[product.id] = response.data.length
                 console.log(`상품 ${product.id} (${product.title}): 리뷰 ${response.data.length}개`)
             } catch (error) {
