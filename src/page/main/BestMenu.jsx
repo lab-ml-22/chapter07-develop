@@ -23,8 +23,17 @@ const BestMenu = () => {
         const counts = {}
         for (const product of products) {
             try {
-                const response = await fetchData('reviews', { productId: product.id })
-                counts[product.id] = response.data.length
+                // 로컬 스토리지에서 리뷰 개수 조회 (우선)
+                const localReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
+                const localCount = localReviews.filter(review => review.productId === product.id).length
+                
+                if (localCount > 0) {
+                    counts[product.id] = localCount
+                } else {
+                    // 로컬에 없으면 db.json에서 조회
+                    const response = await fetchData('reviews', { productId: product.id })
+                    counts[product.id] = response.data.length
+                }
             } catch (error) {
                 counts[product.id] = 0
             }

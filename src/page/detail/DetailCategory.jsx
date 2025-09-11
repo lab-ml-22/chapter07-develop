@@ -63,9 +63,19 @@ const DetailCategory = ({activeIndex, onProductClick}) => {
         const counts = {}
         for (const product of products) {
             try {
-                const response = await fetchData('reviews', { productId: product.id })
-                counts[product.id] = response.data.length
-                console.log(`상품 ${product.id} (${product.title}): 리뷰 ${response.data.length}개`)
+                // 로컬 스토리지에서 리뷰 개수 조회 (우선)
+                const localReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
+                const localCount = localReviews.filter(review => review.productId === product.id).length
+                
+                if (localCount > 0) {
+                    counts[product.id] = localCount
+                    console.log(`상품 ${product.id} (${product.title}): 로컬 리뷰 ${localCount}개`)
+                } else {
+                    // 로컬에 없으면 db.json에서 조회
+                    const response = await fetchData('reviews', { productId: product.id })
+                    counts[product.id] = response.data.length
+                    console.log(`상품 ${product.id} (${product.title}): DB 리뷰 ${response.data.length}개`)
+                }
             } catch (error) {
                 counts[product.id] = 0
                 console.error(`상품 ${product.id} 리뷰 조회 실패:`, error)

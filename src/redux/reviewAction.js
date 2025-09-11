@@ -44,8 +44,17 @@ export const fetchReviewsAsync = (productId) => {
     return async dispatch => {
         dispatch(setReviewLoading(true))
         try {
-            const response = await fetchData('reviews', { productId })
-            dispatch(fetchReviews(response.data))
+            // 로컬 스토리지에서 리뷰 조회 (우선)
+            const localReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
+            const filteredReviews = localReviews.filter(review => review.productId === productId)
+            
+            if (filteredReviews.length > 0) {
+                dispatch(fetchReviews(filteredReviews))
+            } else {
+                // 로컬에 없으면 db.json에서 조회
+                const response = await fetchData('reviews', { productId })
+                dispatch(fetchReviews(response.data))
+            }
             dispatch(setReviewLoading(false))
         } catch (error) {
             console.error('리뷰 조회 실패:', error)
@@ -55,37 +64,54 @@ export const fetchReviewsAsync = (productId) => {
 }
 
 export const addReviewAsync = (reviewData) => {
-    return dispatch => {
-        axios.post(`${API_BASE_URL}/reviews`, reviewData)
-            .then(response => {
-                dispatch(addReview(response.data))
-            })
-            .catch(error => {
-                console.error('리뷰 추가 실패:', error)
-            })
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에 리뷰 추가
+            const existingReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
+            const newReview = {
+                ...reviewData,
+                id: `review-${Date.now()}`,
+                createdAt: new Date().toISOString()
+            }
+            existingReviews.push(newReview)
+            localStorage.setItem('reviews', JSON.stringify(existingReviews))
+            
+            dispatch(addReview(newReview))
+        } catch (error) {
+            console.error('리뷰 추가 실패:', error)
+        }
     }
 }
 
 export const updateReviewAsync = (reviewId, reviewData) => {
-    return dispatch => {
-        axios.put(`${API_BASE_URL}/reviews/${reviewId}`, reviewData)
-            .then(response => {
-                dispatch(updateReview(response.data))
-            })
-            .catch(error => {
-                console.error('리뷰 수정 실패:', error)
-            })
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에서 리뷰 수정
+            const existingReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
+            const updatedReviews = existingReviews.map(review => 
+                review.id === reviewId ? { ...review, ...reviewData } : review
+            )
+            localStorage.setItem('reviews', JSON.stringify(updatedReviews))
+            
+            const updatedReview = { ...reviewData, id: reviewId }
+            dispatch(updateReview(updatedReview))
+        } catch (error) {
+            console.error('리뷰 수정 실패:', error)
+        }
     }
 }
 
 export const deleteReviewAsync = (reviewId) => {
-    return dispatch => {
-        axios.delete(`${API_BASE_URL}/reviews/${reviewId}`)
-            .then(() => {
-                dispatch(deleteReview(reviewId))
-            })
-            .catch(error => {
-                console.error('리뷰 삭제 실패:', error)
-            })
+    return async dispatch => {
+        try {
+            // 로컬 스토리지에서 리뷰 삭제
+            const existingReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
+            const updatedReviews = existingReviews.filter(review => review.id !== reviewId)
+            localStorage.setItem('reviews', JSON.stringify(updatedReviews))
+            
+            dispatch(deleteReview(reviewId))
+        } catch (error) {
+            console.error('리뷰 삭제 실패:', error)
+        }
     }
 }
