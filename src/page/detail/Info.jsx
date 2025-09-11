@@ -186,8 +186,8 @@ const Info = () => {
             <div className="infoTextBox">
                 <ul>
                     
-                    <li><a onClick={onLayerInfo1} href="#!"><span>영양정보표 및 원산지 정보</span></a></li>
-                    <li><a onClick={onLayerInfo2} href="#!"><span>알레르기 유발물질 정보</span></a></li>
+                    <li><a onClick={onLayerInfo1} href="javascript:void(0)"><span>영양정보표 및 원산지 정보</span></a></li>
+                    <li><a onClick={onLayerInfo2} href="javascript:void(0)"><span>알레르기 유발물질 정보</span></a></li>
                     {
                         isLayerOpen === true && activeLayer === 'LayerInfo1' ? <LayerInfo1 isLayerOpen={onLayerInfo1} isLayerClose={onLayerClose}></LayerInfo1> : null
                     }

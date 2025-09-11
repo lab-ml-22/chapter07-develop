@@ -1,9 +1,4 @@
-import axios from 'axios'
-
-// API 기본 URL 설정 (환경에 따라 동적 변경)
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '/.netlify/functions/api' 
-  : 'http://localhost:3001'
+import { fetchData } from '../data/mockData'
 
 // 선택한 카테고리명의 상태액션
 export const setCategoryTitle = (categoryTitle) => ({
@@ -36,15 +31,13 @@ export const setBestMenu = (bestMenu) => ({
 
 // 베스트메뉴의 비동기액션
 export const fetchBestMenu = () => {
-    return (dispatch) => {
-        axios.get(`${API_BASE_URL}/bestMenu`)
-            .then((response) => {
-                // console.log(`베스트메뉴의response = ${JSON.stringify(response.data)}`);
-                dispatch(setBestMenu(response.data))
-            })
-            .catch(error => {
-                console.log(error)
-            })
+    return async (dispatch) => {
+        try {
+            const response = await fetchData('bestMenu')
+            dispatch(setBestMenu(response.data))
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
@@ -56,15 +49,13 @@ export const setChichenSet = (chickenSet) => ({
 
 // 치킨세트의 비동기액션
 export const fetchChicken = () => {
-    return (dispatch) => {
-        axios.get(`${API_BASE_URL}/chickenSet`)
-            .then((response) => {
-// console.log(`치킨세트의response.data = ${JSON.stringify(response.data)}`);
-                dispatch(setChichenSet(response.data))
-            })
-            .catch(error => {
-                console.log(error)
-            })
+    return async (dispatch) => {
+        try {
+            const response = await fetchData('chickenSet')
+            dispatch(setChichenSet(response.data))
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
@@ -76,15 +67,13 @@ export const setBurgerSet = (burgerSet) => ({
 
 // 버거세트의 비동기액션
 export const fetchBurger = () => {
-    return (dispatch) => {
-        axios.get(`${API_BASE_URL}/burgerSet`)
-            .then((response) => {
-// console.log(`버거세트의response.data = ${JSON.stringify(response.data)}`);
-                dispatch(setBurgerSet(response.data))
-            })
-            .catch(error => {
-                console.log(error)
-            })
+    return async (dispatch) => {
+        try {
+            const response = await fetchData('burgerSet')
+            dispatch(setBurgerSet(response.data))
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
@@ -96,14 +85,13 @@ export const setSnackSideSet = (snackSideSet) => ({
 
 // 스낵사이드의 비동기액션
 export const fetchSnackSide = () => {
-    return (dispatch) => {
-        axios.get(`${API_BASE_URL}/snackSideSet`)
-            .then((response) => {
-                dispatch(setSnackSideSet(response.data))
-            })
-            .catch(error => {
-                console.log(error)
-            })
+    return async (dispatch) => {
+        try {
+            const response = await fetchData('snackSideSet')
+            dispatch(setSnackSideSet(response.data))
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
 
@@ -115,15 +103,13 @@ export const setDrink = (drink) => ({
 
 // 음료의 비동기액션
 export const fetchDrink = () => {
-    return (dispatch) => {
-        axios.get(`${API_BASE_URL}/drink`)
-            .then((response) => {
-// console.log(`음료세트의response.data = ${JSON.stringify(response.data)}`);
-                dispatch(setDrink(response.data))
-            })
-            .catch(error => {
-                console.log(error);
-            })
+    return async (dispatch) => {
+        try {
+            const response = await fetchData('drink')
+            dispatch(setDrink(response.data))
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 

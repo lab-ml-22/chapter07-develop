@@ -41,10 +41,10 @@ const BottomNav = ({onNaviMenu}) => {
     <>
         <div className="bottomNavbox">
             <ul>
-                <li><a onClick={onSetHome} href="#!"><span>홈</span></a></li>
-                <li><a onClick={onNaviMenu} href="#!"><span>리스트</span></a></li>
-                <li><a onClick={() => onMoveCategory(5, '주소등록')} href="#!"><span>딜리버리</span></a></li>
-                <li><a href="#!" onClick={onBasket}><span>마이페이지</span></a></li>
+                <li><a onClick={onSetHome} href="javascript:void(0)"><span>홈</span></a></li>
+                <li><a onClick={onNaviMenu} href="javascript:void(0)"><span>리스트</span></a></li>
+                <li><a onClick={() => onMoveCategory(5, '주소등록')} href="javascript:void(0)"><span>딜리버리</span></a></li>
+                <li><a href="javascript:void(0)" onClick={onBasket}><span>마이페이지</span></a></li>
             </ul>
         </div>
         {

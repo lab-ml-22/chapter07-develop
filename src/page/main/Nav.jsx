@@ -66,33 +66,33 @@ const Nav = ({className, onNaviMenu, setIsDimed, setIsNaviMenu}) => {
         <>
             <div className="tab">
                 <h1 onClick={onMoveHome}>BURGER</h1>
-                <a className="btn_menu" onClick={onNaviMenu} href="#!">
+                <a className="btn_menu" onClick={onNaviMenu} href="javascript:void(0)">
                     <span className="blind">메뉴</span>
                     <span className="menu"></span>
                 </a>
             </div>
             <nav className={className}>
-                <a className="btn_close" onClick={onNaviMenu} href="#!"><span></span></a>
+                <a className="btn_close" onClick={onNaviMenu} href="javascript:void(0)"><span></span></a>
                 <ul>
                     <li>
-                        <a href="#!" className={isActiveMenu === 'DELIVERY' ? "btn_subMenu on" : "btn_subMenu"} onClick={()=>onSubMenu('DELIVERY')}>DELIVERY</a>
+                        <a href="javascript:void(0)" className={isActiveMenu === 'DELIVERY' ? "btn_subMenu on" : "btn_subMenu"} onClick={()=>onSubMenu('DELIVERY')}>DELIVERY</a>
                         <ul className="subMenu">
-                            <li><a href="#!" onClick={() => onSubMenuClick(0, '추천메뉴')}>추천메뉴</a></li>
-                            <li><a href="#!" onClick={() => onSubMenuClick(1, '치킨&세트')}>치킨&세트</a></li>
-                            <li><a href="#!" onClick={() => onSubMenuClick(2, '버거&세트')}>버거&세트</a></li>
-                            <li><a href="#!" onClick={() => onSubMenuClick(3, '스낵&사이드')}>스낵&사이드</a></li>
-                            <li><a href="#!" onClick={() => onSubMenuClick(4, '음료')}>음료</a></li>
+                            <li><a href="javascript:void(0)" onClick={() => onSubMenuClick(0, '추천메뉴')}>추천메뉴</a></li>
+                            <li><a href="javascript:void(0)" onClick={() => onSubMenuClick(1, '치킨&세트')}>치킨&세트</a></li>
+                            <li><a href="javascript:void(0)" onClick={() => onSubMenuClick(2, '버거&세트')}>버거&세트</a></li>
+                            <li><a href="javascript:void(0)" onClick={() => onSubMenuClick(3, '스낵&사이드')}>스낵&사이드</a></li>
+                            <li><a href="javascript:void(0)" onClick={() => onSubMenuClick(4, '음료')}>음료</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#!" className={isActiveMenu === 'STORE' ? "btn_subMenu on" : "btn_subMenu"} onClick={()=>onSubMenu('STORE')}>STORE</a>
+                        <a href="javascript:void(0)" className={isActiveMenu === 'STORE' ? "btn_subMenu on" : "btn_subMenu"} onClick={()=>onSubMenu('STORE')}>STORE</a>
                         <ul className="subMenu">
-                            <li><a href="#!" onClick={() => onMoveCategory(5, '주소등록')}>주소등록</a></li>
+                            <li><a href="javascript:void(0)" onClick={() => onMoveCategory(5, '주소등록')}>주소등록</a></li>
                         </ul>
                     </li>
-                    <li><a href="#!">EVENT</a></li>
-                    <li><a href="#!">KFC SERVICE</a></li>
-                    <li><a href="#!">가맹 및 입점 문의</a></li>
+                    <li><a href="javascript:void(0)">EVENT</a></li>
+                    <li><a href="javascript:void(0)">KFC SERVICE</a></li>
+                    <li><a href="javascript:void(0)">가맹 및 입점 문의</a></li>
                 </ul>
                 
             </nav>

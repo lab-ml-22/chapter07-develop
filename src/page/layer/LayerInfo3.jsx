@@ -46,7 +46,7 @@ const LayerInfo3 = ({isLayerOpen, isLayerClose}) => {
                             <div className="post">
                                 <h2>배달받을 주소</h2>
                                 <div className="search">
-                                    <a className="btn_search" onClick={handleClick} href="#!">주소찾기</a>
+                                    <a className="btn_search" onClick={handleClick} href="javascript:void(0)">주소찾기</a>
                                 </div>
                                 <div className="list-wrapper">
                                     <div className="info">
@@ -58,8 +58,8 @@ const LayerInfo3 = ({isLayerOpen, isLayerClose}) => {
                                     </div>
                                 </div>
                                 <p className="btn-cover">
-                                    <a className="btn" onClick={isLayerClose} href="#!">닫기</a>
-                                    <a className="btn_ok" onClick={isLayerClose} href="#!">확인</a>
+                                    <a className="btn" onClick={isLayerClose} href="javascript:void(0)">닫기</a>
+                                    <a className="btn_ok" onClick={isLayerClose} href="javascript:void(0)">확인</a>
                                 </p>
                             </div>
                         </div>

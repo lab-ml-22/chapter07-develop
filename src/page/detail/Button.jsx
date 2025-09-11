@@ -68,8 +68,8 @@ const Button = () => {
   return (
     <>
       <div className="btnBox">
-        <a className="btn_basket" onClick={onBasket} href="#!">장바구니</a>
-        <a className="btn_order" href="#!">바로주문</a>
+        <a className="btn_basket" onClick={onBasket} href="javascript:void(0)">장바구니</a>
+        <a className="btn_order" href="javascript:void(0)">바로주문</a>
       </div>
     </> 
   )

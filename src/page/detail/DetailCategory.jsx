@@ -5,7 +5,7 @@ import {setSelectedBestMenuProductId, setSelectedChickenProductId, setSelectedBu
 setSelectedSnackSideProductId, setSelectedDrinkProductId} from '../../redux/setMenuAction'
 import { fetchBasketInProduct } from '../../redux/setBasketAction'
 import { fetchBestMenu, fetchChicken, fetchBurger, fetchSnackSide, fetchDrink} from '../../redux/action'
-import axios from 'axios'
+import { fetchData } from '../../data/mockData'
 
 const DetailCategory = ({activeIndex, onProductClick}) => {
     const [resultCategory, setResultCateGory] = useState([])
@@ -63,7 +63,7 @@ const DetailCategory = ({activeIndex, onProductClick}) => {
         const counts = {}
         for (const product of products) {
             try {
-                const response = await axios.get(`${process.env.NODE_ENV === 'production' ? '/.netlify/functions/api' : 'http://localhost:3001'}/reviews?productId=${product.id}`)
+                const response = await fetchData('reviews', { productId: product.id })
                 counts[product.id] = response.data.length
                 console.log(`상품 ${product.id} (${product.title}): 리뷰 ${response.data.length}개`)
             } catch (error) {

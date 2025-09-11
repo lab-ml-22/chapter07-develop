@@ -1,10 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// db.json 파일 읽기
-const dbPath = path.join(__dirname, '../../db.json');
-const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
-
 exports.handler = async (event, context) => {
   const { httpMethod, path, queryStringParameters } = event;
   
@@ -12,7 +8,8 @@ exports.handler = async (event, context) => {
   const headers = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Content-Type': 'application/json'
   };
 
   // OPTIONS 요청 처리 (CORS preflight)
@@ -25,14 +22,25 @@ exports.handler = async (event, context) => {
   }
 
   try {
+    // db.json 파일 읽기
+    const dbPath = path.join(process.cwd(), 'db.json');
+    const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+    
     // 경로에서 리소스 추출 (예: /bestMenu, /chickenSet 등)
     const resource = path.replace('/', '');
+    
+    console.log('Requested resource:', resource);
+    console.log('Available resources:', Object.keys(db));
     
     if (!db[resource]) {
       return {
         statusCode: 404,
         headers,
-        body: JSON.stringify({ error: 'Resource not found' })
+        body: JSON.stringify({ 
+          error: 'Resource not found',
+          requested: resource,
+          available: Object.keys(db)
+        })
       };
     }
 
@@ -48,16 +56,22 @@ exports.handler = async (event, context) => {
       data = data.filter(item => item.productId == queryStringParameters.productId);
     }
 
+    console.log('Returning data:', data.length, 'items');
+
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify(data)
     };
   } catch (error) {
+    console.error('Error:', error);
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ error: error.message })
+      body: JSON.stringify({ 
+        error: error.message,
+        stack: error.stack
+      })
     };
   }
 };

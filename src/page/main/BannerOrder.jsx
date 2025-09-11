@@ -9,7 +9,7 @@ const BannerOrder = () => {
             <div className="bannerOrder">
                 <div className="inner">
                     <div className="top">Experience the burger that will make your taste buds sing! Order now</div>
-                    <a onClick={onOrderApp} href="#!">APP ORDER</a>
+                    <a onClick={onOrderApp} href="javascript:void(0)">APP ORDER</a>
                 </div>
             </div>   
         </>

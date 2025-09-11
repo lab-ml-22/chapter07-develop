@@ -35,8 +35,8 @@ const Banner = () => {
   return (
     <>
       <ul className="bannerBox">
-        <li><a onClick={onAddressSearch} href="#!"><img src={banner1} alt=""/></a></li>
-        <li><a onClick={onGoBestMenu} href="#!"><img src={banner2} alt=""/></a></li>
+        <li><a onClick={onAddressSearch} href="javascript:void(0)"><img src={banner1} alt=""/></a></li>
+        <li><a onClick={onGoBestMenu} href="javascript:void(0)"><img src={banner2} alt=""/></a></li>
         {
           isLayerOpen && activeLayer === 'LayerInfo3' ? <LayerInfo3 isLayerOpen={onAddressSearch} isLayerClose={onLayerClose}></LayerInfo3> : null
         }

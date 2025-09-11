@@ -5,11 +5,11 @@ const Footer = () => {
         <>
             <footer>
                 <ul>
-                    <li><a href="#!">개인정보처리방침</a></li>
-                    <li><a href="#!">사이트 이용약관</a></li>
-                    <li><a href="#!">위치정보 이용약관</a></li>
-                    <li><a href="#!">선불카드 이용약관</a></li>
-                    <li><a href="#!">영상정보처리기기 운영관리방침</a></li>
+                    <li><a href="javascript:void(0)">개인정보처리방침</a></li>
+                    <li><a href="javascript:void(0)">사이트 이용약관</a></li>
+                    <li><a href="javascript:void(0)">위치정보 이용약관</a></li>
+                    <li><a href="javascript:void(0)">선불카드 이용약관</a></li>
+                    <li><a href="javascript:void(0)">영상정보처리기기 운영관리방침</a></li>
                 </ul>
                 <address>
                     <span>서울 버거구 버거동 100번지</span>

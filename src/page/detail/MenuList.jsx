@@ -66,12 +66,12 @@ const MenuList = ({onShowCategoryMenu, onProductClick, showCategoryList}) => {
                     slidesPerView={2.5}
                     style={{width:'100%', height:'100%'}}
                 >
-                    <SwiperSlide><a href="#!" onClick={() => onSelectDetailMenu(0, '추천메뉴')} className={activeIndex === 0 ? 'active': ''}><span className="img_cover"><img src={icon1} alt="추천메뉴"/></span><span>추천메뉴</span></a></SwiperSlide>
-                    <SwiperSlide><a href="#!" onClick={() => onSelectDetailMenu(1, '치킨세트')} className={activeIndex === 1 ? 'active': ''}><span className="img_cover"><img src={icon2} alt="치킨세트"/></span><span>치킨&세트</span></a></SwiperSlide>
-                    <SwiperSlide><a href="#!" onClick={() => onSelectDetailMenu(2, '버거세트')} className={activeIndex === 2 ? 'active': ''}><span className="img_cover"><img src={icon3} alt="버거세트"/></span><span>버거&세트</span></a></SwiperSlide>
-                    <SwiperSlide><a href="#!" onClick={() => onSelectDetailMenu(3, '스낵사이드')} className={activeIndex === 3 ? 'active': ''}><span className="img_cover"><img src={icon4} alt="스낵사이드"/></span><span>스낵&사이드</span></a></SwiperSlide>
-                    <SwiperSlide><a href="#!" onClick={() => onSelectDetailMenu(4, '음료')} className={activeIndex === 4 ? 'active': ''}><span className="img_cover"><img src={icon5} alt="음료"/></span><span>음료</span></a></SwiperSlide>
-                    <SwiperSlide><a href="#!" onClick={() => onSelectDetailMenu(5, '주소등록')} className={activeIndex === 5 ? 'active': ''}><span className="img_cover"><img src={icon6} alt="주소등록"/></span><span>주소등록</span></a></SwiperSlide>
+                    <SwiperSlide><a href="javascript:void(0)" onClick={() => onSelectDetailMenu(0, '추천메뉴')} className={activeIndex === 0 ? 'active': ''}><span className="img_cover"><img src={icon1} alt="추천메뉴"/></span><span>추천메뉴</span></a></SwiperSlide>
+                    <SwiperSlide><a href="javascript:void(0)" onClick={() => onSelectDetailMenu(1, '치킨세트')} className={activeIndex === 1 ? 'active': ''}><span className="img_cover"><img src={icon2} alt="치킨세트"/></span><span>치킨&세트</span></a></SwiperSlide>
+                    <SwiperSlide><a href="javascript:void(0)" onClick={() => onSelectDetailMenu(2, '버거세트')} className={activeIndex === 2 ? 'active': ''}><span className="img_cover"><img src={icon3} alt="버거세트"/></span><span>버거&세트</span></a></SwiperSlide>
+                    <SwiperSlide><a href="javascript:void(0)" onClick={() => onSelectDetailMenu(3, '스낵사이드')} className={activeIndex === 3 ? 'active': ''}><span className="img_cover"><img src={icon4} alt="스낵사이드"/></span><span>스낵&사이드</span></a></SwiperSlide>
+                    <SwiperSlide><a href="javascript:void(0)" onClick={() => onSelectDetailMenu(4, '음료')} className={activeIndex === 4 ? 'active': ''}><span className="img_cover"><img src={icon5} alt="음료"/></span><span>음료</span></a></SwiperSlide>
+                    <SwiperSlide><a href="javascript:void(0)" onClick={() => onSelectDetailMenu(5, '주소등록')} className={activeIndex === 5 ? 'active': ''}><span className="img_cover"><img src={icon6} alt="주소등록"/></span><span>주소등록</span></a></SwiperSlide>
                 </Swiper>
                 {
                     showCategoryList && 

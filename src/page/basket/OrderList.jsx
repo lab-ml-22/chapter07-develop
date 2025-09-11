@@ -72,7 +72,7 @@ const OrderList = () => {
                                             <div className="textbox">
                                                 <h3>{value.title}</h3>
                                                 <p>{value.optionName}</p>
-                                                <a className="btn_delete" href="#!" onClick={() => onDeleteProduct(value.id)}></a>
+                                                <a className="btn_delete" href="javascript:void(0)" onClick={() => onDeleteProduct(value.id)}></a>
                                             </div>
                                         </div>
                                         <div className="price">
@@ -95,7 +95,7 @@ const OrderList = () => {
                                     <dt>담긴 상품</dt>
                                     <dd>       
                                         <span className="nanum">{countTotal}개</span>                              
-                                        <a href="#!"><img src={recycle} alt="지우기"/></a>
+                                        <a href="javascript:void(0)"><img src={recycle} alt="지우기"/></a>
                                     </dd>
                                 </dl>
                                 <dl className="price">
@@ -103,7 +103,7 @@ const OrderList = () => {
                                     <dd><span className="ico_price black">{priceTotalCommaDigit}</span></dd>
                                 </dl>
                             </div>
-                            <a className="btn_order" href="#!">주문하기</a>
+                            <a className="btn_order" href="javascript:void(0)">주문하기</a>
                         </div>
                     </div>
                 </ul>

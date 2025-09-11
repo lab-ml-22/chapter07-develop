@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchBestMenu, setLoading, setActiveIndex, setUpdateCategory } from '../../redux/action'
 import { setSelectedBestMenuProductId } from '../../redux/setMenuAction'
 import { useHistory } from 'react-router-dom'
-import axios from 'axios'
+import { fetchData } from '../../data/mockData'
 
 const BestMenu = () => {
     const dispatch = useDispatch()
@@ -23,7 +23,7 @@ const BestMenu = () => {
         const counts = {}
         for (const product of products) {
             try {
-                const response = await axios.get(`${process.env.NODE_ENV === 'production' ? '/.netlify/functions/api' : 'http://localhost:3001'}/reviews?productId=${product.id}`)
+                const response = await fetchData('reviews', { productId: product.id })
                 counts[product.id] = response.data.length
             } catch (error) {
                 counts[product.id] = 0

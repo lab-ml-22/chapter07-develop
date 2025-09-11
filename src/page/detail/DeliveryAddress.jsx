@@ -24,7 +24,7 @@ const DeliveryAddress = () =>{
                 <div className="address">
                     <p>
                         <span>배달을 위해 주소를 검색하셔야 합니다</span>
-                        <a href="#!" className="btn_change" onClick={onAddressFind}>변경</a>
+                        <a href="javascript:void(0)" className="btn_change" onClick={onAddressFind}>변경</a>
                     </p>
                     {
                         isLayerOpen === true && acitveLayer === 'LayerInfo3' ? 

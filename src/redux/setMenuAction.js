@@ -1,9 +1,4 @@
-import axios from 'axios'
-
-// API 기본 URL 설정 (환경에 따라 동적 변경)
-const API_BASE_URL = process.env.NODE_ENV === 'production' 
-  ? '/.netlify/functions/api' 
-  : 'http://localhost:3001'
+import { fetchData } from '../data/mockData'
 
 // 액션타입정의
 export const SET_SELECTED_BESTMENUID = "SET_SELECTED_BESTMENUID"
@@ -127,49 +122,47 @@ const resetOtherCategories = (dispatch, currentCategory) => {
 
 // 선택한 베스트메뉴ID의 비동기액션
 export const fetchSelectedBestMenuProductId = bestMenuSelectedId => {
-    return dispatch => {
-        axios.get(`${API_BASE_URL}/bestMenu?id=${bestMenuSelectedId}`)
-            .then(response => {
-                if (response.data && response.data.length > 0) {
-                    const resultData = response.data[0]
-                    const resultID = resultData.id
-                    if(resultData) {
-                        // 상태초기화
-                        resetOtherCategories(dispatch, 'bestMenu')
-                        // 상태업데이트
-                        dispatch(setSelectedBestMenuProduct(resultData))
-                        dispatch(setSelectedBestMenuProductId(resultID))
-                        dispatch(setBasketInProductTitle(resultData.title))
-                    }
+    return async dispatch => {
+        try {
+            const response = await fetchData('bestMenu', { id: bestMenuSelectedId })
+            if (response.data && response.data.length > 0) {
+                const resultData = response.data[0]
+                const resultID = resultData.id
+                if(resultData) {
+                    // 상태초기화
+                    resetOtherCategories(dispatch, 'bestMenu')
+                    // 상태업데이트
+                    dispatch(setSelectedBestMenuProduct(resultData))
+                    dispatch(setSelectedBestMenuProductId(resultID))
+                    dispatch(setBasketInProductTitle(resultData.title))
                 }
-            })
-            .catch(error => {
-                console.error(error);
-            })
+            }
+        } catch (error) {
+            console.error(error);
+        }
     }
 }
 
 // 선택한 치킨세트ID의 비동기액션
 export const fetchSelectedChickenProductId = chickenSelectedId => {
-    return dispatch => {
-        axios.get(`${API_BASE_URL}/chickenSet?id=${chickenSelectedId}`)
-            .then(response => {
-                if (response.data && response.data.length > 0) {
-                    const resultData = response.data[0]
-                    const resultID = resultData.id
-                    if(resultData) {
-                        // 상태초기화
-                        resetOtherCategories(dispatch, 'chickenSet')
-                        // 상태업데이트
-                        dispatch(setSelectedChickenProduct(resultData))
-                        dispatch(setSelectedChickenProductId(resultID))
-                        dispatch(setBasketInProductTitle(resultData.title))
-                    }
+    return async dispatch => {
+        try {
+            const response = await fetchData('chickenSet', { id: chickenSelectedId })
+            if (response.data && response.data.length > 0) {
+                const resultData = response.data[0]
+                const resultID = resultData.id
+                if(resultData) {
+                    // 상태초기화
+                    resetOtherCategories(dispatch, 'chickenSet')
+                    // 상태업데이트
+                    dispatch(setSelectedChickenProduct(resultData))
+                    dispatch(setSelectedChickenProductId(resultID))
+                    dispatch(setBasketInProductTitle(resultData.title))
                 }
-            })
-            .catch(error => {
-                console.error(error)
-            })
+            }
+        } catch (error) {
+            console.error(error)
+        }
     }
 }
 
