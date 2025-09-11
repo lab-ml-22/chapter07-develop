@@ -1,6 +1,14 @@
 {
   "reviews": [
     {
+      "id": "review-mobile-1",
+      "productId": "1345860",
+      "author": "모바일 사용자",
+      "rating": 5,
+      "content": "폰에서 작성한 리뷰입니다. 정말 맛있어요!",
+      "createdAt": "2024-12-19T12:00:00.000Z"
+    },
+    {
       "id": "review-1",
       "productId": "2342896",
       "author": "김치킨",
