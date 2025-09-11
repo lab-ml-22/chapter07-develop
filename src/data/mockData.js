@@ -6,7 +6,7 @@ export const mockData = {
       "title": "갓양념통다리8조각",
       "subText": "치킨나이트 1+1 제외",
       "price": 27000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/2176733_1.jpg",
+      "img": "/images/2176733.png",
       "category": "chickenSet"
     },
     {
@@ -14,7 +14,7 @@ export const mockData = {
       "title": "갓양념통다리12조각",
       "subText": "치킨나이트 1+1 제외",
       "price": 35000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/2176734_1.jpg",
+      "img": "/images/2176733.png",
       "category": "chickenSet"
     },
     {
@@ -22,7 +22,39 @@ export const mockData = {
       "title": "갓양념윙8조각",
       "subText": "치킨나이트 1+1 제외",
       "price": 25000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/2176735_1.jpg",
+      "img": "/images/2176733.png",
+      "category": "chickenSet"
+    },
+    {
+      "id": "2176736",
+      "title": "오리지널 치킨 6조각",
+      "subText": "바삭하고 촉촉한 오리지널 치킨",
+      "price": 22000,
+      "img": "/images/2342896.png",
+      "category": "chickenSet"
+    },
+    {
+      "id": "2176737",
+      "title": "핫크리스피 6조각",
+      "subText": "매콤하고 바삭한 핫크리스피",
+      "price": 23000,
+      "img": "/images/2342897.png",
+      "category": "chickenSet"
+    },
+    {
+      "id": "2176738",
+      "title": "치킨나이트 1+1",
+      "subText": "특별한 치킨나이트 할인",
+      "price": 20000,
+      "img": "/images/2176739.png",
+      "category": "chickenSet"
+    },
+    {
+      "id": "2176739",
+      "title": "치킨윙 6조각",
+      "subText": "바삭한 치킨윙",
+      "price": 18000,
+      "img": "/images/2176739.png",
       "category": "chickenSet"
     }
   ],
@@ -32,7 +64,7 @@ export const mockData = {
       "title": "오리지널 치킨",
       "subText": "바삭하고 촉촉한 KFC 오리지널 치킨",
       "price": 18000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/2342896_1.jpg",
+      "img": "/images/2342896.png",
       "category": "bestMenu"
     },
     {
@@ -40,7 +72,23 @@ export const mockData = {
       "title": "핫크리스피 치킨",
       "subText": "매콤하고 바삭한 핫크리스피 치킨",
       "price": 19000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/2342897_1.jpg",
+      "img": "/images/2342897.png",
+      "category": "bestMenu"
+    },
+    {
+      "id": "2342898",
+      "title": "치킨버거",
+      "subText": "바삭한 치킨과 신선한 야채",
+      "price": 12000,
+      "img": "/images/2176681.png",
+      "category": "bestMenu"
+    },
+    {
+      "id": "2342899",
+      "title": "감자튀김",
+      "subText": "바삭한 감자튀김",
+      "price": 3000,
+      "img": "/images/2176687.png",
       "category": "bestMenu"
     }
   ],
@@ -50,7 +98,23 @@ export const mockData = {
       "title": "치킨버거 세트",
       "subText": "바삭한 치킨과 신선한 야채",
       "price": 12000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/1234567_1.jpg",
+      "img": "/images/2176681.png",
+      "category": "burgerSet"
+    },
+    {
+      "id": "1234568",
+      "title": "치킨샐러드 버거",
+      "subText": "신선한 야채와 치킨의 만남",
+      "price": 11000,
+      "img": "/images/2176687.png",
+      "category": "burgerSet"
+    },
+    {
+      "id": "1234569",
+      "title": "더블치킨버거",
+      "subText": "두 장의 치킨이 들어간 버거",
+      "price": 15000,
+      "img": "/images/2176688.png",
       "category": "burgerSet"
     }
   ],
@@ -60,7 +124,23 @@ export const mockData = {
       "title": "감자튀김",
       "subText": "바삭한 감자튀김",
       "price": 3000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/3456789_1.jpg",
+      "img": "/images/2176687.png",
+      "category": "snackSideSet"
+    },
+    {
+      "id": "3456790",
+      "title": "치즈스틱",
+      "subText": "쫄깃한 치즈스틱",
+      "price": 4000,
+      "img": "/images/2176688.png",
+      "category": "snackSideSet"
+    },
+    {
+      "id": "3456791",
+      "title": "콘샐러드",
+      "subText": "달콤한 콘샐러드",
+      "price": 2500,
+      "img": "/images/2176689.png",
       "category": "snackSideSet"
     }
   ],
@@ -70,7 +150,23 @@ export const mockData = {
       "title": "콜라",
       "subText": "시원한 콜라",
       "price": 2000,
-      "img": "https://www.kfc.co.kr/upload/menu/thumb/4567890_1.jpg",
+      "img": "/images/2176691.png",
+      "category": "drink"
+    },
+    {
+      "id": "4567891",
+      "title": "사이다",
+      "subText": "시원한 사이다",
+      "price": 2000,
+      "img": "/images/2176693.png",
+      "category": "drink"
+    },
+    {
+      "id": "4567892",
+      "title": "오렌지주스",
+      "subText": "신선한 오렌지주스",
+      "price": 3000,
+      "img": "/images/2176694.png",
       "category": "drink"
     }
   ],
