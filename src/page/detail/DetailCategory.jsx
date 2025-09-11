@@ -63,21 +63,23 @@ const DetailCategory = ({activeIndex, onProductClick}) => {
         const counts = {}
         for (const product of products) {
             try {
-                // 로컬 스토리지에서 리뷰 개수 조회 (우선)
+                // 로컬 스토리지에서 리뷰 조회
                 const localReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
                 const deletedReviewIds = JSON.parse(localStorage.getItem('deletedReviewIds') || '[]')
-                const localCount = localReviews.filter(review => review.productId === product.id).length
+                const filteredLocalReviews = localReviews.filter(review => review.productId === product.id)
                 
-                if (localCount > 0) {
-                    counts[product.id] = localCount
-                    console.log(`상품 ${product.id} (${product.title}): 로컬 리뷰 ${localCount}개`)
-                } else {
-                    // 로컬에 없으면 db.json에서 조회하되, 삭제된 리뷰는 제외
-                    const response = await fetchData('reviews', { productId: product.id })
-                    const serverReviews = response.data.filter(review => !deletedReviewIds.includes(review.id))
-                    counts[product.id] = serverReviews.length
-                    console.log(`상품 ${product.id} (${product.title}): DB 리뷰 ${serverReviews.length}개 (삭제된 리뷰 제외)`)
-                }
+                // 서버에서 리뷰 조회 (삭제된 리뷰 제외)
+                const response = await fetchData('reviews', { productId: product.id })
+                const serverReviews = response.data.filter(review => !deletedReviewIds.includes(review.id))
+                
+                // 로컬과 서버 리뷰를 병합하여 개수 계산
+                const allReviews = [...serverReviews, ...filteredLocalReviews]
+                const uniqueReviews = allReviews.filter((review, index, self) => 
+                    index === self.findIndex(r => r.id === review.id)
+                )
+                
+                counts[product.id] = uniqueReviews.length
+                console.log(`상품 ${product.id} (${product.title}): 총 리뷰 ${uniqueReviews.length}개 (로컬: ${filteredLocalReviews.length}, 서버: ${serverReviews.length})`)
             } catch (error) {
                 counts[product.id] = 0
                 console.error(`상품 ${product.id} 리뷰 조회 실패:`, error)

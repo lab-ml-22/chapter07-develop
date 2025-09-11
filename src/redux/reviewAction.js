@@ -44,19 +44,25 @@ export const fetchReviewsAsync = (productId) => {
     return async dispatch => {
         dispatch(setReviewLoading(true))
         try {
-            // 로컬 스토리지에서 리뷰 조회 (우선)
+            // 로컬 스토리지에서 리뷰 조회
             const localReviews = JSON.parse(localStorage.getItem('reviews') || '[]')
             const deletedReviewIds = JSON.parse(localStorage.getItem('deletedReviewIds') || '[]')
             const filteredLocalReviews = localReviews.filter(review => review.productId === productId)
             
-            if (filteredLocalReviews.length > 0) {
-                dispatch(fetchReviews(filteredLocalReviews))
-            } else {
-                // 로컬에 없으면 db.json에서 조회하되, 삭제된 리뷰는 제외
-                const response = await fetchData('reviews', { productId })
-                const serverReviews = response.data.filter(review => !deletedReviewIds.includes(review.id))
-                dispatch(fetchReviews(serverReviews))
-            }
+            // 서버에서 리뷰 조회 (삭제된 리뷰 제외)
+            const response = await fetchData('reviews', { productId })
+            const serverReviews = response.data.filter(review => !deletedReviewIds.includes(review.id))
+            
+            // 로컬과 서버 리뷰를 병합 (중복 제거)
+            const allReviews = [...serverReviews, ...filteredLocalReviews]
+            const uniqueReviews = allReviews.filter((review, index, self) => 
+                index === self.findIndex(r => r.id === review.id)
+            )
+            
+            // 최신순으로 정렬
+            uniqueReviews.sort((a, b) => new Date(b.createdAt || b.id) - new Date(a.createdAt || a.id))
+            
+            dispatch(fetchReviews(uniqueReviews))
             dispatch(setReviewLoading(false))
         } catch (error) {
             console.error('리뷰 조회 실패:', error)
