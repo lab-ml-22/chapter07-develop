@@ -27,8 +27,7 @@
     "build": "set NODE_OPTIONS=--openssl-legacy-provider && set DISABLE_ESLINT_PLUGIN=true && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch db.json --port 3001",
-    "type-check": "tsc --noEmit"
+    "server": "json-server --watch db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [],
